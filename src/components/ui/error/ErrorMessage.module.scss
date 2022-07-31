@@ -1,0 +1,24 @@
+.errorMessage {
+  height: 0;
+  display: flex;
+  align-items: center;
+  color: #ff424d;
+  background: transparent;
+  font-size: 0;
+  line-height: 0;
+  padding: 0;
+  transform: translateY(-20px);
+  opacity: 0;
+  border-radius: 6px;
+  transition: 0.3s background, 0.3s transform, 0.3s opacity, 0.2s height;
+
+  &.active {
+    padding: 4px 16px;
+    height: 30px;
+    font-size: 13px;
+    line-height: 20px;
+    opacity: 1;
+    transform: translateY(0);
+    background: rgba(231, 46, 43, 0.1);
+  }
+}
