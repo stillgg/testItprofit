@@ -1,4 +1,4 @@
-import React, { memo, SyntheticEvent, useState } from "react";
+import React, { memo, SyntheticEvent } from "react";
 import DatePicker from "react-datepicker";
 
 import classes from "./InputDate.module.scss";

@@ -1,6 +1,4 @@
-import React, { ChangeEvent, memo, useCallback, useState } from "react";
-
-import { useValidate } from "../../../../hooks/useValidate";
+import React, { ChangeEvent, memo, useCallback } from "react";
 
 import { Input } from "../../../ui/input/Input";
 

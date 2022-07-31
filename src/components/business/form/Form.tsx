@@ -1,10 +1,4 @@
-import React, {
-  ChangeEvent,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 
 import classes from "./Form.module.scss";
 
@@ -153,12 +147,14 @@ export const Form = () => {
         setValue={setTel}
         className={classes.input}
       />
+
       <InputDate
         isError={isErrorDate}
         errorMessage={errorDate}
         startDate={startDate}
         setStartDate={setStartDate}
       />
+
       <TextareaMessage
         isError={isErrorMessage}
         errorMessage={errorMessage}
@@ -166,6 +162,7 @@ export const Form = () => {
         value={message}
         setValue={setMessage}
       />
+
       {status === "loading" ? (
         <ButtonSubmit disabled>Отправка формы на сервер..</ButtonSubmit>
       ) : (

@@ -52,6 +52,7 @@ export const Input = forwardRef<
           type={type}
           {...props}
         />
+
         <ErrorMessage isError={isError} errorMessage={errorMessage} />
       </label>
     );

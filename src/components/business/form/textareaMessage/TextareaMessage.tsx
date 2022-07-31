@@ -3,7 +3,6 @@ import React, { ChangeEvent, memo, useCallback } from "react";
 import classes from "./TextareaMessage.module.scss";
 
 import { Textarea } from "../../../ui/textarea/Textarea";
-import { useValidate } from "../../../../hooks/useValidate";
 
 export const TextareaMessage = memo(
   ({

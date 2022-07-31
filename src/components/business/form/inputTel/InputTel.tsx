@@ -2,8 +2,6 @@ import React, { ChangeEvent, memo, useCallback } from "react";
 
 import { formatPhoneNumber } from "../../../../helpers/formatHelpers";
 
-import { useValidate } from "../../../../hooks/useValidate";
-
 import { Input } from "../../../ui/input/Input";
 
 export const InputTel = memo(
