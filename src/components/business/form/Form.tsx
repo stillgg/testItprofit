@@ -108,8 +108,6 @@ export const Form = () => {
     }
   }, [status]);
 
-  console.log("status", status);
-
   return (
     <form onSubmit={onSubmit} className={classes.form}>
       <FormTitle />
