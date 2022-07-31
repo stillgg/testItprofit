@@ -15,7 +15,9 @@ import { FormTitle } from "./formTitle/FormTitle";
 export const Form = () => {
   const [isErrorFromServer, toggleError] = useState(false);
 
-  const [status, setStatus] = useState<"loading" | "error" | null>(null);
+  const [status, setStatus] = useState<"loading" | "preload" | "error" | null>(
+    null
+  );
 
   const [name, setName] = useState("");
   const {
@@ -75,22 +77,37 @@ export const Form = () => {
       validateDate(startDate);
       validateMessage(message);
 
-      setStatus("loading");
+      setStatus("preload");
 
       e.preventDefault();
     },
-    [name, email, tel, startDate, message]
+    [
+      name,
+      email,
+      tel,
+      startDate,
+      message,
+      isErrorName,
+      isErrorEmail,
+      isErrorTel,
+      isErrorDate,
+      isErrorMessage,
+    ]
   );
 
   useEffect(() => {
     if (
+      status === "preload" &&
       !isErrorName &&
       !isErrorEmail &&
       !isErrorTel &&
       !isErrorDate &&
-      !isErrorMessage &&
-      status === "loading"
+      !isErrorMessage
     ) {
+      return setStatus("loading");
+    }
+
+    if (status === "loading") {
       const timer = setTimeout(() => {
         clearTimeout(timer);
 
@@ -106,7 +123,14 @@ export const Form = () => {
         }
       }, 1500);
     }
-  }, [status]);
+  }, [
+    status,
+    isErrorName,
+    isErrorEmail,
+    isErrorTel,
+    isErrorDate,
+    isErrorMessage,
+  ]);
 
   return (
     <form onSubmit={onSubmit} className={classes.form}>
@@ -162,7 +186,7 @@ export const Form = () => {
       />
 
       {status === "loading" ? (
-        <ButtonSubmit disabled>Отправка формы на сервер..</ButtonSubmit>
+        <ButtonSubmit disabled>Отправка формы..</ButtonSubmit>
       ) : (
         <ButtonSubmit>Отправить форму</ButtonSubmit>
       )}
