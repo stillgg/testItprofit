@@ -73,9 +73,11 @@ export const useValidate = ({ type, value }: useValidateParam) => {
 
   const validateTel = useCallback((value: string) => {
     const errorMessage = "Неверный номер телефона";
+
     if (value.length < 13) {
       return callError(errorMessage);
     }
+
     return resetError(errorMessage);
   }, []);
 

@@ -81,18 +81,7 @@ export const Form = () => {
 
       e.preventDefault();
     },
-    [
-      name,
-      email,
-      tel,
-      startDate,
-      message,
-      isErrorName,
-      isErrorEmail,
-      isErrorTel,
-      isErrorDate,
-      isErrorMessage,
-    ]
+    [name, email, tel, startDate, message]
   );
 
   useEffect(() => {
@@ -153,6 +142,7 @@ export const Form = () => {
         setValue={setName}
         className={classes.input}
       />
+
       <InputEmail
         isError={isErrorEmail}
         errorMessage={errorEmail}
@@ -161,6 +151,7 @@ export const Form = () => {
         setValue={setEmail}
         className={classes.input}
       />
+
       <InputTel
         isError={isErrorTel}
         errorMessage={errorTel}

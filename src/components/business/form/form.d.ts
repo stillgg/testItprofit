@@ -6,7 +6,3 @@ interface InputProps {
   validate: (str: string) => void;
   className?: string;
 }
-
-type Maybe<Type> = {
-  [Property in keyof Type]?: Type[Property];
-};
